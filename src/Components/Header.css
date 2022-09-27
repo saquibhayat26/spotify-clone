@@ -1,0 +1,46 @@
+.header {
+  color: rgb(0, 0, 0);
+  height: 100%;
+  width: 100%;
+}
+
+.header__container {
+  margin-left: 12rem;
+}
+
+.image__container {
+  background-color: #ffb5a7;
+  height: auto;
+  width: 100%;
+}
+
+.image {
+  width: 72.3rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+  .image {
+    width: 50.3rem;
+  }
+}
+@media only screen and (max-width: 624px) {
+  /*Big smartphones [426px -> 600px]*/
+  .image {
+    width: 22.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 624px) and (max-device-width: 894px) {
+  /* insert styles here */
+  .image {
+    width: 28.5rem;
+  }
+}
+
+@media only screen and (max-width: 524px) {
+  /*Big smartphones [426px -> 600px]*/
+  .image {
+    width: 18.2rem;
+  }
+}

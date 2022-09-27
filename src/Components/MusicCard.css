@@ -1,0 +1,10 @@
+.playlist {
+  padding: 2rem;
+}
+
+.playlist__title {
+  font-weight: 600;
+  color: rgb(184, 175, 175);
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
