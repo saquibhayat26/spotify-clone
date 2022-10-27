@@ -1,16 +1,58 @@
-.playlist__container {
-  margin-left: 12rem;
-  padding: 2rem;
+.topPlaylists {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.playlist__containerTitle {
-  font-weight: 600;
-  color: #a59696;
-  font-size: 1rem;
+.topPlaylist__top {
+  position: fixed;
+
+  background-color: #ffb5a7;
+  height: 8rem;
+  width: 100%;
+  left: 12rem;
+}
+
+.image12 {
+  width: 90% !important;
+  height: 100%;
+}
+
+.topPlaylist__nav {
+  width: 12rem;
+  position: fixed;
+  background-color: #574fd8;
+  height: 100%;
+  padding-top: 15%;
+}
+
+.topPlaylist__bottom {
+  /* height: 80%; */
+  position: relative;
+}
+
+.topPlaylist__wrapper1 {
+  width: 85%;
+  position: absolute;
+  top: 8rem;
+  left: 12rem;
+  z-index: -1;
+}
+
+.topPlaylist__wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-gap: 10px;
+}
+
+.topPlaylist__containerTitle {
+  color: rgb(132, 123, 123);
+  padding: 2rem;
   margin-bottom: 1rem;
 }
 
-.playlist__musicContainer {
+.topPlaylist__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,19 +60,19 @@
   transition: all 0.3s;
 }
 
-.playlist__musicContainer:hover {
+.topPlaylist__container:hover {
   scale: 1.05;
 }
 
-.playlist__musicContainer:hover .playlist__addIconContainer {
+.topPlaylist__container:hover .removeIcon__container {
   opacity: 1;
 }
 
-.playlist__ImgContainer {
+.topPlaylist__imgContainer {
   position: relative;
 }
 
-.playlist__ImgContainer > img {
+.topPlaylist__imgContainer > img {
   width: 7rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -38,7 +80,7 @@
   z-index: 1;
 }
 
-.playlist__addIconContainer {
+.removeIcon__container {
   position: absolute;
   top: 13%;
   left: 75%;
@@ -48,10 +90,46 @@
   opacity: 0;
 }
 
-.playlist__musicContainer > p {
+.topPlaylist__container > p {
   font-size: 12px;
   font-weight: 550;
   max-width: 6rem;
   text-align: center;
   word-wrap: break-word;
+}
+
+.topPlaylist__title {
+  font-weight: 600;
+  color: rgb(184, 175, 175);
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 724px) {
+  /* insert styles here */
+  .topPlaylist {
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+
+  .topPlaylist__top {
+    left: 0;
+  }
+
+  .topPlaylist__nav {
+    width: 100%;
+    height: 4rem !important;
+    margin-top: 6rem;
+    padding-top: 1rem;
+  }
+
+  .topPlaylist__wrapper1 {
+    left: 3rem;
+    top: 12rem;
+  }
+
+  .topPlaylist__wrapper2 {
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+  }
 }

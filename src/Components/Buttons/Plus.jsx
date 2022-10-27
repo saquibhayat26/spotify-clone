@@ -1,18 +1,9 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getFavMusic } from "../../redux/features/favMusicSlice";
 
-const musicProtoType = {
-  id: "",
-  image: "",
-  subtitle: "",
-};
-
 const Plus = ({ id, image, subtitle }) => {
   const dispatch = useDispatch();
-
-  const [myFav, setMyFav] = useState(musicProtoType);
 
   const handleAdd = () => {
     dispatch(getFavMusic({ id, image, subtitle }));

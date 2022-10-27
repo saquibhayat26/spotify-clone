@@ -1,31 +1,23 @@
-.sideNav {
-  color: rgb(158, 176, 248);
-  background-color: #574fd8;
-  height: 100%;
-  width: 12rem;
-  position: fixed;
-  display: flex;
-}
-
 .sideNav__container {
+  color: rgb(158, 176, 248);
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 6rem;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-left: 2.5rem;
 }
 
 .sideNav__item {
-  text-decoration: none;
   display: flex;
   align-items: center;
-  margin: 1.2rem;
+  justify-content: center;
+  gap: 12px;
 }
 
-.sideNav__item > span {
+.sideNav__item :nth-child(1) {
   display: flex;
-  margin-right: 1rem;
-  margin-left: 1rem;
+
   background-color: transparent;
   cursor: pointer;
 }
@@ -55,4 +47,31 @@
   margin-top: -0.5rem;
   color: rgb(255, 255, 255);
   background-color: #6a61e7;
+}
+
+@media only screen and (max-width: 480px) {
+  /* insert styles here */
+  .sideNav__container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-left: 0;
+  }
+
+  .sideNav__item {
+    gap: 4px;
+  }
+}
+@media only screen and (max-width: 724px) {
+  /* insert styles here */
+  .sideNav__container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 0;
+  }
+
+  .sideNav__item {
+    gap: 8px;
+  }
 }

@@ -8,9 +8,11 @@ export const favMusicSlice = createSlice({
   name: "music",
   initialState,
   reducers: {
-    getFavMusic: (state = initialState, action) => {
-      state.myMusic.push(action.payload);
-      console.log(state.myMusic.length);
+    getFavMusic: (state, action) => {
+      const index = state.myMusic.findIndex(
+        (album) => album.id === action.payload.id
+      );
+      if (index === -1) state.myMusic.push(action.payload);
     },
     removeFavMusic: (state, action) => {
       state.myMusic = state.myMusic.filter(

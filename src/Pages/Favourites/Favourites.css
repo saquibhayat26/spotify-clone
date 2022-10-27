@@ -1,17 +1,57 @@
-.favMusic__wrapper {
+.favourites {
+  color: rgb(0, 0, 0);
+  height: auto;
   display: flex;
-  flex-wrap: wrap;
-  padding: 3rem;
+  flex-direction: column;
+  position: relative;
+}
+
+.favourites__top {
+  position: fixed;
+  background-color: #ffb5a7;
+  height: 8rem;
+  width: 100%;
+  left: 12rem;
+}
+
+.image {
+  width: 90% !important;
+  height: 100%;
+}
+
+.favourites__nav {
+  width: 12rem;
+  position: fixed;
+  background-color: #574fd8;
+  height: 100%;
+  padding-top: 15%;
+}
+
+.favourites__bottom {
+  height: 80%;
+  position: relative;
+}
+
+.favMusic__wrapper1 {
+  width: 85%;
+  position: absolute;
+  top: 8rem;
+  left: 12rem;
+  z-index: -1;
+}
+
+.favMusic__wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-gap: 10px;
 }
 
 .favMusic__container {
-  /* border: 1px solid; */
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
-  margin: 2rem;
 }
 
 .favMusic__container:hover {
@@ -57,4 +97,33 @@
   color: rgb(184, 175, 175);
   font-size: 14px;
   margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 724px) {
+  /* insert styles here */
+  .favourites {
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+
+  .favourites__top {
+    left: 0;
+  }
+
+  .favourites__nav {
+    width: 100%;
+    height: 4rem !important;
+    margin-top: 6rem;
+    padding-top: 1rem;
+  }
+
+  .favMusic__wrapper1 {
+    left: 3rem;
+    top: 12rem;
+  }
+
+  .favMusic__wrapper2 {
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+  }
 }

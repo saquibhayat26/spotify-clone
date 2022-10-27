@@ -15,16 +15,20 @@ const responsive = {
     breakpoint: { max: 3000, min: 1024 },
     items: 7,
   },
-  tablet: {
+  tablet1: {
     breakpoint: { max: 1024, min: 764 },
     items: 5,
   },
-  tablet: {
-    breakpoint: { max: 764, min: 464 },
+  tablet2: {
+    breakpoint: { max: 764, min: 680 },
+    items: 4,
+  },
+  tablet3: {
+    breakpoint: { max: 680, min: 560 },
     items: 3,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 560, min: 0 },
     items: 2,
   },
 };
@@ -34,7 +38,7 @@ const MusicCard = ({ title }) => {
 
   const filterData = useSelector((state) => state.filter.filterData);
 
-  const { data, isError, isLoading } = useGetTrackChartsQuery();
+  const { data } = useGetTrackChartsQuery();
 
   useEffect(() => {
     setMusicData(data);
@@ -46,15 +50,15 @@ const MusicCard = ({ title }) => {
       {musicData && (
         <Carousel
           responsive={responsive}
-          swipeable={false}
+          swipeable={true}
           draggable={false}
           showDots={false}
           infinite={true}
-          autoPlay={false}
+          autoPlay={true}
           customTransition="all .5"
           transitionDuration={500}
           containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
+          removeArrowOnDeviceType={["table2", "tablet3", "mobile"]}
         >
           {musicData?.tracks
             ?.filter((track) => {
@@ -67,7 +71,9 @@ const MusicCard = ({ title }) => {
               }
             })
             .map((track, index) => (
-              <Music track={track} key={index} />
+              <div className="music__wrapper" key={"index"}>
+                <Music track={track} key={index} />
+              </div>
             ))}
         </Carousel>
       )}

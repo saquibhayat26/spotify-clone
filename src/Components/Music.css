@@ -4,6 +4,8 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
+  height: 12rem;
+  width: 8rem;
 }
 
 .music__container:hover {
